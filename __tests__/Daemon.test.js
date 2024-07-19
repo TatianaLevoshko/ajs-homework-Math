@@ -1,10 +1,16 @@
 import Daemon from '../src/Daemon';
 
-describe('Daemon', () => {
-  test('attack calculation', () => {
-    const daemon = new Daemon(100);
-    daemon.distance = 2;
-    daemon.stoned = true;
-    expect(daemon.attack).toBe(85);
-  });
+test('daemon attack without stoned', () => {
+  const daemon = new Daemon('Sauron');
+  daemon.attack = 100;
+  daemon.distance = 3;
+  expect(daemon.attack).toBe(80);
+});
+
+test('daemon attack with stoned', () => {
+  const daemon = new Daemon('Sauron');
+  daemon.attack = 100;
+  daemon.distance = 2;
+  daemon.stoned = true;
+  expect(daemon.attack).toBe(85);
 });

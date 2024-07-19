@@ -1,9 +1,14 @@
 import Magician from './Magician';
 import Daemon from './Daemon';
 
-// Примеры использования классов
-const magician = new Magician(100);
-const daemon = new Daemon(100);
-
+const magician = new Magician('Gandalf');
+magician.attack = 100;
+magician.distance = 2;
+magician.stoned = true;
 console.log(magician.attack);
-console.log(daemon.attack);
+
+const daemon = new Daemon('Sauron');
+daemon.attack = 100;
+daemon.distance = 3;
+daemon.stoned = false;
+console.log(daemon.attack); 

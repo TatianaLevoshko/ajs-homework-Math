@@ -1,7 +1,7 @@
-import Character from './Magician';
+import Character from './Character';
 
-class Daemon extends Character {
-  
+export default class Daemon extends Character {
+  constructor(name) {
+    super(name, 'Daemon');
+  }
 }
-
-export default Daemon;

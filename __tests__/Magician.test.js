@@ -1,10 +1,16 @@
 import Magician from '../src/Magician';
 
-describe('Magician', () => {
-  test('attack calculation', () => {
-    const magician = new Magician(100);
-    magician.distance = 2;
-    magician.stoned = true;
-    expect(magician.attack).toBe(85);
-  });
+test('magician attack without stoned', () => {
+  const magician = new Magician('Gandalf');
+  magician.attack = 100;
+  magician.distance = 2;
+  expect(magician.attack).toBe(90);
+});
+
+test('magician attack with stoned', () => {
+  const magician = new Magician('Gandalf');
+  magician.attack = 100;
+  magician.distance = 2;
+  magician.stoned = true;
+  expect(magician.attack).toBe(85);
 });
